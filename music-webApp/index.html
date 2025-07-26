@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="music-player">
+            <div class="album-art-container">
+                <img src="album-art-1.png" alt="Album Art" id="album-art" class="album-art">
+                <canvas id="audio-visualizer" class="audio-visualizer"></canvas>
+            </div>
+
+            <div class="track-info">
+                <h2 id="title">Chill Lo-fi</h2>
+                <p id="artist">Synthwave Dreamer</p>
+            </div>
+
+            <div class="progress-container" id="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="prev" class="control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M7 6V18L5 18V6H7Z M18 18V6L9 12L18 18Z"></path></svg>
+                </button>
+                <button id="play" class="control-btn play-pause">
+                     <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><path d="M8 5V19L19 12L8 5Z"></path></svg>
+                     <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="36" height="36" style="display: none;"><path d="M6 19H10V5H6V19Z M14 5V19H18V5H14Z"></path></svg>
+                </button>
+                <button id="next" class="control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17 6V18H19V6H17Z M6 6V18L15 12L6 6Z"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="playlist-container">
+            <h3><span class="playlist-heading-text">Playlist</span> <button id="toggle-playlist-btn" class="toggle-playlist-btn" title="Toggle playlist visibility"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button></h3>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search songs...">
+            </div>
+            <div class="playlist-controls">
+                <button id="add-file-btn" class="playlist-control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <span>Browse</span>
+                </button>
+                <input type="file" accept="audio/*" id="file-input" style="display: none;">
+
+                <button id="toggle-library-btn" class="playlist-control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-4h4V9h-4V5h-2v4H7v2h4v4z"/></svg>
+                    <span>Library</span>
+                </button>
+            </div>
+            <div id="library-container" class="library-container hidden">
+                <h4>Available Songs</h4>
+                <ul id="available-song-list" class="song-list">
+                </ul>
+            </div>
+            <ul id="song-list" class="song-list">
+            </ul>
+        </div>
+    </div>
+
+    <audio id="audio" src="track-1.mp3"></audio>
+
+    <button id="back-to-top-btn" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
